@@ -27,34 +27,15 @@ class Album {
     }
 
     public function create() {
-        $sql = "INSERT INTO {$this->table}
-        (titulo, artista, genero, fecha_lanzamiento, num_canciones, es_explicit)
-        VALUES (?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO {$this->table} (titulo, artista, genero, fecha_lanzamiento, num_canciones, es_explicit) VALUES (?, ?, ?, ?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
-        return $stmt->execute([
-            $this->titulo,
-            $this->artista,
-            $this->genero,
-            $this->fecha_lanzamiento,
-            $this->num_canciones,
-            $this->es_explicit
-        ]);
+        return $stmt->execute([$this->titulo,$this->artista,$this->genero,$this->fecha_lanzamiento,$this->num_canciones,$this->es_explicit]);
     }
 
     public function update() {
-        $sql = "UPDATE {$this->table}
-        SET titulo=?, artista=?, genero=?, fecha_lanzamiento=?, num_canciones=?, es_explicit=?
-        WHERE idAlbum=?";
+        $sql = "UPDATE {$this->table} SET titulo=?, artista=?, genero=?, fecha_lanzamiento=?, num_canciones=?, es_explicit=? WHERE idAlbum=?";
         $stmt = $this->conn->prepare($sql);
-        return $stmt->execute([
-            $this->titulo,
-            $this->artista,
-            $this->genero,
-            $this->fecha_lanzamiento,
-            $this->num_canciones,
-            $this->es_explicit,
-            $this->idAlbum
-        ]);
+        return $stmt->execute([$this->titulo,$this->artista,$this->genero,$this->fecha_lanzamiento,$this->num_canciones,$this->es_explicit,$this->idAlbum]);
     }
 
     public function delete() {
