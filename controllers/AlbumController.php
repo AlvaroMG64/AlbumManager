@@ -22,13 +22,9 @@ class AlbumController {
         AuthController::checkAuth();
 
         if ($_POST) {
-            // Asegurar es_explicit
-            $_POST['es_explicit'] = $_POST['es_explicit'] ?? 0;
-
             foreach ($_POST as $k => $v) $this->album->$k = $v;
             $this->album->create();
             header("Location: index.php?action=index");
-            exit();
         }
 
         include 'views/crear.php';
@@ -37,20 +33,15 @@ class AlbumController {
     public function edit() {
         AuthController::checkAuth();
 
-        $this->album->idAlbum = $_GET['id'];
-        $this->album->readOne();
-        $album_data = $this->album;
-
         if ($_POST) {
-            // Asegurar es_explicit
-            $_POST['es_explicit'] = $_POST['es_explicit'] ?? 0;
-
             foreach ($_POST as $k => $v) $this->album->$k = $v;
             $this->album->update();
             header("Location: index.php?action=index");
-            exit();
         }
 
+        $this->album->idAlbum = $_GET['id'];
+        $this->album->readOne();
+        $album_data = $this->album;
         include 'views/editar.php';
     }
 
@@ -59,6 +50,5 @@ class AlbumController {
         $this->album->idAlbum = $_GET['id'];
         $this->album->delete();
         header("Location: index.php?action=index");
-        exit();
     }
 }
