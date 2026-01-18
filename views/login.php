@@ -9,21 +9,17 @@
 
 <style>
 body{
-    font-family: Roboto, sans-serif;
-    background: #f5f7fa;
+    font-family:Roboto;
+    background:#f5f7fa
 }
 .card{
-    max-width: 400px;
-    margin: 80px auto;
-    padding: 30px;
-    border-radius: 15px;
-}
-label{
-    font-weight: 500;
+    max-width:400px;
+    margin:80px auto;
+    padding:30px;
+    border-radius:15px
 }
 </style>
 </head>
-
 <body>
 
 <div class="card shadow">
@@ -35,33 +31,35 @@ label{
         </div>
     <?php endif; ?>
 
-    <form method="post" action="index.php?action=authenticate">
+    <form method="post" action="index.php?action=authenticate" class="needs-validation" novalidate>
 
-        <!-- CSRF -->
         <input type="hidden" name="csrf_token" value="<?= $_SESSION['csrf_token'] ?? '' ?>">
 
-        <!-- Usuario -->
         <div class="mb-3">
-            <label for="identificador" class="form-label">Usuario</label>
+            <label class="form-label fw-semibold">Usuario</label>
             <input
-                type="text"
-                id="identificador"
-                name="identificador"
                 class="form-control"
-                placeholder="Usuario"
-                required>
+                name="identificador"
+                placeholder="Introduce tu usuario"
+                required
+            >
+            <div class="invalid-feedback">
+                El usuario es obligatorio
+            </div>
         </div>
 
-        <!-- Contraseña -->
         <div class="mb-4">
-            <label for="password" class="form-label">Contraseña</label>
+            <label class="form-label fw-semibold">Contraseña</label>
             <input
                 type="password"
-                id="password"
-                name="password"
                 class="form-control"
-                placeholder="Contraseña"
-                required>
+                name="password"
+                placeholder="Introduce tu contraseña"
+                required
+            >
+            <div class="invalid-feedback">
+                La contraseña es obligatoria
+            </div>
         </div>
 
         <button class="btn btn-primary w-100">
