@@ -65,7 +65,8 @@ AlbumManager/
 │
 └── public/
     └── js/
-        └── validaciones.js
+        ├── validaciones_usuario.js
+        └── validaciones_album.js
 ```
 
 ---
