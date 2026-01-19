@@ -108,7 +108,15 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-warning btn-submit">Guardar Cambios</button>
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-warning btn-submit">
+                Guardar Cambios
+            </button>
+
+            <a href="index.php?action=index" class="btn btn-secondary">
+                Cancelar
+            </a>
+        </div>
     </form>
 </div>
 

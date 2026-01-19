@@ -146,6 +146,27 @@ El CRUD de álbumes está **protegido por sesión** y solo es accesible tras ini
 
 ---
 
+## 📸 Capturas de la aplicación
+
+A continuación se muestran algunas capturas representativas del funcionamiento de la aplicación **AlbumManager**, incluyendo el sistema de autenticación y el CRUD de álbumes.
+
+### 🔐 Pantalla de Login
+![Login Screenshot](screenshots/LoginScreenshot.png)
+
+### 🧭 Panel de control (Dashboard)
+![Dashboard Screenshot](screenshots/DashboardScreenshot.png)
+
+### 📋 Listado de álbumes
+![Listar Screenshot](screenshots/ListarScreenshot.png)
+
+### ➕ Crear álbum
+![Crear Screenshot](screenshots/CrearScreenshot.png)
+
+### ✏️ Editar álbum
+![Editar Screenshot](screenshots/EditarScreenshot.png)
+
+---
+
 ## 📥 Importación de la base de datos
 
 ### Pasos:

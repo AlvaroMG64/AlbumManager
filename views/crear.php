@@ -106,7 +106,15 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-primary btn-submit">Crear Álbum</button>
+                <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-success btn-submit">
+                Crear Álbum
+            </button>
+
+            <a href="index.php?action=index" class="btn btn-secondary">
+                Cancelar
+            </a>
+        </div>
     </form>
 </div>
 
