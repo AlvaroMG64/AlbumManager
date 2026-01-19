@@ -8,35 +8,45 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
 <style>
-body{
-    font-family:Roboto;
-    background:#f5f7fa
-}
-.card{
-    max-width:500px;
-    margin:80px auto;
-    padding:30px;
-    border-radius:15px
-}
+    body {
+        font-family: Roboto, sans-serif;
+        background: #f5f7fa;
+    }
+    .card {
+        max-width: 600px;
+        margin: 80px auto;
+        padding: 35px;
+        border-radius: 18px;
+    }
+    .info-label {
+        font-weight: 500;
+        color: #6c757d;
+    }
 </style>
 </head>
+
 <body>
 
 <div class="card shadow text-center">
 
-    <h3 class="mb-3">Panel de control</h3>
+    <h3 class="mb-4">Panel de control</h3>
 
     <p class="mb-1">
-        <strong><?= $_SESSION['nombre'] . ' ' . $_SESSION['apellidos'] ?></strong>
+        <span class="info-label">Usuario:</span><br>
+        <strong><?= htmlspecialchars($_SESSION['idusuario']) ?></strong>
     </p>
 
-    <p class="text-muted mb-1">
-        Usuario: <?= $_SESSION['idusuario'] ?>
+    <p class="mb-1 mt-3">
+        <span class="info-label">Nombre:</span><br>
+        <strong>
+            <?= htmlspecialchars($_SESSION['nombre']) ?>
+            <?= htmlspecialchars($_SESSION['apellidos']) ?>
+        </strong>
     </p>
 
-    <p class="text-muted mb-4">
-        Sesión iniciada a las
-        <?= date('H:i:s', $_SESSION['login_time']) ?>
+    <p class="mb-4 mt-3">
+        <span class="info-label">Inicio de sesión:</span><br>
+        <strong><?= $_SESSION['login_time'] ?></strong>
     </p>
 
     <div class="d-grid gap-2">

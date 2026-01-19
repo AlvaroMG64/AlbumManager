@@ -35,9 +35,14 @@ class AuthController {
         $user = $this->user->login($_POST['identificador']);
 
         if ($user && password_verify($_POST['password'], $user['password'])) {
+
             session_regenerate_id(true);
-            $_SESSION['idusuario'] = $user['idusuario'];
-            $_SESSION['login_time'] = time();
+
+            $_SESSION['idusuario']  = $user['idusuario'];
+            $_SESSION['nombre']     = $user['nombre'];
+            $_SESSION['apellidos']  = $user['apellidos'];
+            $_SESSION['login_time'] = date('d/m/Y H:i:s');
+
             header("Location: index.php?action=dashboard");
             exit();
         }
@@ -54,6 +59,7 @@ class AuthController {
 
     public function logout() {
         $_SESSION = [];
+
         if (ini_get("session.use_cookies")) {
             $params = session_get_cookie_params();
             setcookie(session_name(), '', time() - 42000,
@@ -61,6 +67,7 @@ class AuthController {
                 $params["secure"], $params["httponly"]
             );
         }
+
         session_destroy();
         header("Location: index.php");
     }

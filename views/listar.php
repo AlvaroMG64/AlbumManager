@@ -75,7 +75,11 @@
     <h1>Listado de Álbumes</h1>
 
     <div class="mb-3 text-center">
-        <a href="index.php?action=create" class="btn btn-primary btn-lg">Añadir nuevo álbum</a>
+        <a href="index.php?action=create" class="btn btn-success btn-lg">Añadir nuevo álbum</a>
+    </div>
+
+    <div class="mb-3 text-center">
+        <a href="index.php?action=dashboard" class="btn btn-primary btn-lg">Volver al panel de control</a>
     </div>
 
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
